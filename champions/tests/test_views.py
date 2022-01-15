@@ -74,13 +74,3 @@ class TestListChampion:
 
 
 # <-------------------------------END HOMEWORK 1------------------------------->
-@pytest.mark.django_db
-class TestAbilities:
-    def test_creates_ability_when_data_is_valid(self, client):
-        data = {'name': 'Razor Shuriken',
-                'description': 'Does this and that',
-                'power': 5,
-                'champion': 'Zed'}
-        response = client.post('/champions/ability/', data)
-
-        assert response.status_code == status.HTTP_201_CREATED
