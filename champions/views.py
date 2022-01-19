@@ -13,3 +13,7 @@ class ChampionsView(mixins.UpdateModelMixin, mixins.ListModelMixin, mixins.Retri
     queryset = Champion.objects.all()
     serializer_class = ChampionSerializer
 
+class AbilitiesView(mixins.UpdateModelMixin, mixins.ListModelMixin, mixins.RetrieveModelMixin, mixins.CreateModelMixin,
+                  viewsets.GenericViewSet):
+    queryset = Ability.objects.all()
+    serializer_class = AbilitySerializer
